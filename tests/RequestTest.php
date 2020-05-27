@@ -2,9 +2,9 @@
 
 namespace hCaptcha\Tests;
 
-use hCaptcha\CurlRequest;
+use hCaptcha\Requests\CurlRequest;
 use hCaptcha\hCaptcha;
-use hCaptcha\Response;
+use hCaptcha\Responses\Response;
 use PHPUnit\Framework\TestCase;
 
 /**
@@ -14,23 +14,13 @@ use PHPUnit\Framework\TestCase;
  */
 class RequestTest extends TestCase
 {
-    /**
-     * Test SECRET KEY from API documentation
-     */
-    const TEST_SECRET_KEY = '0x0000000000000000000000000000000000000000';
-
-    /**
-     * Test RESPONSE from API documentation
-     */
-    const TEST_RESPONSE = '10000000-aaaa-bbbb-cccc-000000000001';
-
     public function testEmptyRequest()
     {
         $request = new CurlRequest();
 
         $response = $request->getResponse(
             hCaptcha::VERIFY_URL,
-            self::TEST_SECRET_KEY,
+            hCaptchaTest::TEST_SECRET_KEY,
             ''
         );
 
@@ -45,7 +35,7 @@ class RequestTest extends TestCase
 
         $response = $request->getResponse(
             hCaptcha::VERIFY_URL,
-            self::TEST_SECRET_KEY,
+            hCaptchaTest::TEST_SECRET_KEY,
             'captcha-response-example'
         );
 
@@ -60,8 +50,8 @@ class RequestTest extends TestCase
 
         $response = $request->getResponse(
             hCaptcha::VERIFY_URL,
-            self::TEST_SECRET_KEY,
-            self::TEST_RESPONSE
+            hCaptchaTest::TEST_SECRET_KEY,
+            hCaptchaTest::TEST_RESPONSE
         );
 
         $responseObject = new Response($response);
@@ -89,7 +79,7 @@ class RequestTest extends TestCase
         foreach ($urls as $url) {
             $response = $request->getResponse(
                 $url,
-                self::TEST_SECRET_KEY,
+                hCaptchaTest::TEST_SECRET_KEY,
                 ''
             );
 
