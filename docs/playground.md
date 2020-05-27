@@ -1,5 +1,7 @@
 Back to [additional methods](additional-methods.md)
 
+---
+
 Playground
 ------------
 

@@ -18,7 +18,7 @@ composer require mitloshuk/hcaptcha
 or add
 
 ```
-"mitloshuk/hcaptcha": "^1.0"
+"mitloshuk/hcaptcha": "^1.1"
 ```
 
 to the require section of your `composer.json` file.
@@ -27,9 +27,6 @@ How to use
 ------------
 
 Read [guide](https://github.com/mitloshuk/hcaptcha/tree/master/docs/_navigation.md) to know how to use that library
-
-#### PHP
-
 
 
 
