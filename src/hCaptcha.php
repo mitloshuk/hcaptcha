@@ -2,6 +2,11 @@
 
 namespace hCaptcha;
 
+use hCaptcha\Requests\CurlRequest;
+use hCaptcha\Requests\RequestFormatException;
+use hCaptcha\Requests\RequestInterface;
+use hCaptcha\Responses\Response;
+
 /**
  * Class hCaptcha
  *
@@ -30,13 +35,19 @@ class hCaptcha
      *
      * @param string                $secretKey
      * @param RequestInterface|null $request
+     *
+     * @throws RequestFormatException
      */
     public function __construct($secretKey, $request = null)
     {
         $this->secretKey = $secretKey;
 
-        if ($request && $request instanceof RequestInterface) {
-            $this->request = $request;
+        if ($request) {
+            if ($request instanceof RequestInterface) {
+                $this->request = $request;
+            } else {
+                throw new RequestFormatException();
+            }
         } else {
             $this->request = new CurlRequest();
         }
@@ -58,5 +69,12 @@ class hCaptcha
         );
 
         return new Response($response);
+    }
+
+    public static function isSuccess($response, $secretKey, $userIp = null)
+    {
+        $hCaptcha = new static($secretKey);
+
+        return $hCaptcha->verify($response, $userIp)->isSuccess();
     }
 }

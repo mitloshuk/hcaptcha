@@ -1,6 +1,6 @@
 <?php
 
-namespace hCaptcha;
+namespace hCaptcha\Responses;
 
 /**
  * Response class returned by any request to hCaptcha
@@ -13,6 +13,16 @@ class Response
      * @var bool $success
      */
     protected $success;
+
+    /**
+     * @var string|null $raw
+     */
+    protected $raw = null;
+
+    /**
+     * @var array|null $array
+     */
+    protected $array = null;
 
     /**
      * @var bool $credit
@@ -41,16 +51,19 @@ class Response
      */
     public function __construct($responseString)
     {
-        $json = json_decode($responseString, true);
+        $data = json_decode($responseString, true);
 
-        $this->success = (bool)$json['success'];
+        $this->raw = $responseString;
+        $this->array = $data;
+
+        $this->success = (bool)$data['success'];
 
         if ($this->isSuccess()) {
-            $this->credit = (bool)$json['credit'];
-            $this->hostname = (bool)$json['hostname'];
-            $this->date = (bool)$json['challenge_ts'];
+            $this->credit = (bool)$data['credit'];
+            $this->hostname = (bool)$data['hostname'];
+            $this->date = (bool)$data['challenge_ts'];
         } else {
-            $this->errors = (array)$json['error-codes'];
+            $this->errors = (array)$data['error-codes'];
         }
     }
 
@@ -72,6 +85,22 @@ class Response
     public function isCredit()
     {
         return $this->credit;
+    }
+
+    /**
+     * @return string|null
+     */
+    public function getRaw()
+    {
+        return $this->raw;
+    }
+
+    /**
+     * @return array|null
+     */
+    public function getArray()
+    {
+        return $this->array;
     }
 
     /**

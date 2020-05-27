@@ -1,6 +1,6 @@
 <?php
 
-namespace hCaptcha;
+namespace hCaptcha\Requests;
 
 /**
  * Curl is default request method
