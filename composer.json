@@ -17,7 +17,7 @@
       "email": "artem@mitloshuk.name"
     }
   ],
-  "version": "1.1.0",
+  "version": "1.1.1",
   "require": {
     "php": ">=5.6",
     "ext-json": "*",
@@ -29,11 +29,6 @@
   "autoload": {
     "psr-4": {
       "hCaptcha\\": "src/"
-    }
-  },
-  "autoload-dev": {
-    "psr-4": {
-      "hCaptcha\\Tests\\": "tests/"
     }
   }
 }

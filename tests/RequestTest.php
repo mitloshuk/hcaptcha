@@ -1,7 +1,5 @@
 <?php
 
-namespace hCaptcha\Tests;
-
 use hCaptcha\Requests\CurlRequest;
 use hCaptcha\hCaptcha;
 use hCaptcha\Responses\Response;
