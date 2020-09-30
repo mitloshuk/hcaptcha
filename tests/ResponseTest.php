@@ -1,7 +1,7 @@
 <?php
 
 use PHPUnit\Framework\TestCase;
-use hCaptcha\Requests\RequestFormatException;
+use HCaptcha\Requests\RequestFormatException;
 
 /**
  * Class ResponseTest

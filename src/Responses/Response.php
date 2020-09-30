@@ -1,6 +1,6 @@
 <?php
 
-namespace hCaptcha\Responses;
+namespace HCaptcha\Responses;
 
 /**
  * Response class returned by any request to hCaptcha

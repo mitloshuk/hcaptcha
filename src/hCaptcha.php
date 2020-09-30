@@ -1,11 +1,11 @@
 <?php
 
-namespace hCaptcha;
+namespace HCaptcha;
 
-use hCaptcha\Requests\CurlRequest;
-use hCaptcha\Requests\RequestFormatException;
-use hCaptcha\Requests\RequestInterface;
-use hCaptcha\Responses\Response;
+use HCaptcha\Requests\CurlRequest;
+use HCaptcha\Requests\RequestFormatException;
+use HCaptcha\Requests\RequestInterface;
+use HCaptcha\Responses\Response;
 
 /**
  * Class hCaptcha

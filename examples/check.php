@@ -1,6 +1,6 @@
 <?php
 
-use hCaptcha\hCaptcha;
+use HCaptcha\hCaptcha;
 
 include_once __DIR__ . '/../vendor/autoload.php';
 

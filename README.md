@@ -18,7 +18,7 @@ composer require mitloshuk/hcaptcha
 or add
 
 ```
-"mitloshuk/hcaptcha": "^1.1"
+"mitloshuk/hcaptcha": "^1.2"
 ```
 
 to the require section of your `composer.json` file.

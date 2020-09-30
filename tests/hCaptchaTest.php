@@ -1,8 +1,8 @@
 <?php
 
-use hCaptcha\hCaptcha;
-use hCaptcha\Requests\RequestFormatException;
-use hCaptcha\Responses\Response;
+use HCaptcha\hCaptcha;
+use HCaptcha\Requests\RequestFormatException;
+use HCaptcha\Responses\Response;
 use PHPUnit\Framework\TestCase;
 
 /**

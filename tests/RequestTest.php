@@ -1,8 +1,8 @@
 <?php
 
-use hCaptcha\Requests\CurlRequest;
-use hCaptcha\hCaptcha;
-use hCaptcha\Responses\Response;
+use HCaptcha\Requests\CurlRequest;
+use HCaptcha\hCaptcha;
+use HCaptcha\Responses\Response;
 use PHPUnit\Framework\TestCase;
 
 /**
