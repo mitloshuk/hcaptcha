@@ -1,6 +1,6 @@
 <?php
 
-namespace HCaptcha\Requests;
+namespace HCaptcha\Exceptions;
 
 use Exception;
 
