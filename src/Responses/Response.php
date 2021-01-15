@@ -59,7 +59,9 @@ class Response
         $this->success = (bool)$data['success'];
 
         if ($this->isSuccess()) {
-            $this->credit = (bool)$data['credit'];
+            if (array_key_exists('credit', $data)) {
+                $this->credit = (bool)$data['credit'];
+            }
             $this->hostname = (bool)$data['hostname'];
             $this->date = (bool)$data['challenge_ts'];
         } else {
